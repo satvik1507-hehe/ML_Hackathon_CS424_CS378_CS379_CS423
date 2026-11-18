@@ -1,0 +1,20 @@
+# Data and derived artifacts (keep raw hackathon data outside this repository)
+data/
+artifacts/intermediate/
+artifacts/tuning/
+outputs/cache/
+*.parquet
+
+# Python and local environment
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.env
+.DS_Store
+
+# Logs
+*.log
+

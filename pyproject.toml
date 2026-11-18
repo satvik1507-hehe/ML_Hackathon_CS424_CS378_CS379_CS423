@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pathsnap"
+version = "0.1.0"
+description = "Distributed GPS trajectory map-matching and route reconstruction"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.30,<1",
+  "pydantic-settings>=2.4,<3",
+  "numpy>=1.26,<3",
+  "pandas>=2.2,<3",
+  "scikit-learn>=1.5,<2",
+  "scipy>=1.13,<2",
+  "networkx>=3.3,<4",
+  "shapely>=2.0,<3",
+  "pyproj>=3.6,<4",
+  "folium>=0.17,<1",
+  "optuna>=4,<5",
+  "joblib>=1.4,<2",
+  "streamlit>=1.38,<2",
+  "requests>=2.32,<3",
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.6,<1", "mypy>=1.11,<2"]
+
+[project.scripts]
+pathsnap-inventory = "pathsnap.data.inventory:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
