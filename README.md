@@ -8,16 +8,19 @@ during development.
 
 ## Current status
 
-The data pipeline, candidate features, five-model comparison, Bayesian search, HMM/Viterbi decoder,
-experiment logs, and comparison plots have been run on supplied development data. The evaluator
-partition was not supplied, so the final evaluation path still needs that data folder.
+The data pipeline, EDA, five-model comparisons, Bayesian search, HMM/Viterbi decoder, FastAPI,
+Streamlit UI, experiment logs, and comparison plots have been run on supplied data. The frozen
+active model was also evaluated on the provided `evaluator_test` partition after model selection;
+no training or tuning was performed on that partition. See `outputs/final_evaluation/` and the
+consolidated report at `reports/PathSnap_Technical_Report.pdf`.
 
 ## Data
 
 Set `PATHSNAP_DATA_ROOT` to the supplied `Student folder` directory. Do not copy raw data into this
-repository or commit it. Expected partitions are `train/` (80 trips) and `student_test/` (10 trips).
-Each trip has a `.track`, `.nodes`, `.arcs`, and `.route` file sharing its trip ID. The evaluator
-partition is reserved for final evaluation; keep its labels outside development and the UI.
+repository or commit it. Development partitions are `train/` (80 trips) and `student_test/` (10
+trips). Each trip has a `.track`, `.nodes`, `.arcs`, and `.route` file sharing its trip ID. The
+reserved `evaluator_test` data was used once for final evaluation after freezing the active model;
+do not use it for further feature, model, parameter, or threshold selection.
 
 ```bash
 cp .env.example .env
@@ -34,6 +37,11 @@ python scripts/run_decoder_comparison.py
 python scripts/paired_system_analysis.py
 python scripts/plot_experiments.py
 ```
+
+Rebuild the consolidated submission report after installing the optional PDF dependencies with
+`python scripts/build_technical_report.py` (install using `python -m pip install -e '.[report]'`).
+The PDF is `reports/PathSnap_Technical_Report.pdf`; its plots are generated from the committed CSV
+results and the actual EDA/final-evaluation figures.
 
 The inventory command writes a CSV summary under `outputs/`. It reads the training and student-test
 partitions only and reports file availability, row counts, timestamp gaps, coordinate bounds, and
@@ -170,6 +178,10 @@ API docs are served at `/docs`; `/health` confirms the service is available. Pre
 without loading reference routes, then calculates metrics server-side; the UI receives no reference
 route or labels.
 
+See [docs/two_laptop_deployment.md](docs/two_laptop_deployment.md) for exact Laptop 1/Laptop 2
+commands, network checks, live presentation steps, and the distinction between a `student_test`
+rehearsal and the reserved evaluator partition.
+
 ## Repository map
 
 ```text
@@ -191,10 +203,12 @@ fold results, decoder comparison, attribution, and the limits of this developmen
 
 ## Academic integrity and AI assistance
 
-The supporting assessment rules require independent team implementation and understanding. Treat
-this scaffold and its modeling suggestions as a starting point: verify every design choice against
-the data, disclose AI assistance as required, and write conclusions from your real experiments.
-Every team member should be able to explain the pipeline and reproduce the reported results.
+The supporting assessment rules require independent team implementation and understanding. The
+active 28-feature candidate/HMM implementation was adapted from
+`RealAdhi/ML2026`, commit `97a78406269b33eda31fd17a0b00125c87246946`; this attribution is recorded
+in `docs/active_model.md` and the consolidated report. Verify that this adaptation is allowed by the
+course policy and disclose it as required. Also disclose AI assistance where required. Every team
+member should be able to explain the pipeline and reproduce the reported results.
 
 ## Level 1 training evidence
 

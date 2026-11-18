@@ -1,0 +1,7 @@
+metric,method,value
+Top-1 accuracy (all observations),RF classifier,0.8063433973772491
+Top-1 accuracy (all observations),RF + HMM/Viterbi,0.9574057131239199
+Macro F1 (mean across trips),RF classifier,0.7413010682100013
+Macro F1 (mean across trips),RF + HMM/Viterbi,0.9045835518474302
+Route continuity (pooled transitions),RF classifier,0.9369406021155411
+Route continuity (pooled transitions),RF + HMM/Viterbi,0.9768104149715215

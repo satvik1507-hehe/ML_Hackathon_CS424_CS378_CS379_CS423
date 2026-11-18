@@ -7,8 +7,10 @@ followed by its HMM/Viterbi route decoder. The model and decoder are wired into 
 ## Training and selection evidence
 
 Training used the supplied `train` partition (80 trips), with five-fold GroupKFold by trip.
-`student_test` (10 trips) was used only for development comparison. No evaluator partition was
-read. The model's 28 candidate features and candidate generator match the teammate implementation;
+`student_test` (10 trips) was used for development comparison and model selection. The reserved
+`evaluator_test` partition was not used for fitting or tuning; after the model was frozen, it was
+used once for final evaluation, recorded in `outputs/final_evaluation/`. The model's 28 candidate
+features and candidate generator match the teammate implementation;
 the API applies the same 60 m search radius and keeps up to 12 candidates per observation.
 
 | Candidate model | CV reachable Top-1 mean | Student-test classifier Top-1 (all observations) | Student-test Top-1 after HMM |

@@ -55,7 +55,8 @@ def build_trip_map(gps: list[list[float]], route_segments: list[list[list[float]
 
 st.set_page_config(page_title="PathSnap", page_icon="🗺️", layout="wide")
 st.title("PathSnap")
-st.caption("Choose an evaluation trip to reconstruct its route from GPS observations.")
+st.caption("Choose an available trip to reconstruct its route from GPS observations.")
+st.caption("The API keeps the road network and reference labels server-side; this interface shows the returned prediction and metrics.")
 
 try:
     response = requests.get(f"{API_URL}/trips", timeout=4)

@@ -19,3 +19,10 @@ __pycache__/
 # Logs
 *.log
 
+# Local-only presentation and contributor handoff material
+/AGENTS.md
+/output/contributor_uploads/
+/output/pdf/*Viva*.pdf
+/output/pdf/PathSnap_Reserved_Evaluation_Report.pdf
+/reports/figures/
+
