@@ -1,17 +1,14 @@
 {
-  "model": "hist_gradient_boosting",
+  "model": "random_forest",
+  "source_repository": "https://github.com/RealAdhi/ML2026",
+  "source_commit": "97a78406269b33eda31fd17a0b00125c87246946",
+  "feature_count": 28,
   "selection": {
-    "model": "hist_gradient_boosting",
-    "partition": "cross_validation",
-    "macro_f1": 0.4826013940810361,
-    "macro_precision": 0.5149509975402988,
-    "macro_recall": 0.5037554740861963,
-    "route_continuity": 0.8944556786355514,
-    "top1_accuracy": 0.6186539485742526,
-    "log_loss": 4.105926902217307,
-    "candidate_miss_rate": 0.12123771093528839,
-    "observations": 208417,
-    "train_seconds": 19.124437624996062,
-    "inference_ms_per_observation": 0.006069034871969505
+    "partition": "student_test (development only)",
+    "method": "Random Forest + teammate-tuned HMM",
+    "top1_accuracy": 0.941649,
+    "classifier_only_top1_accuracy": 0.858194,
+    "cross_validation_top1_reachable_mean": 0.850247,
+    "metric_scope": "all student_test observations; HMM-decoded route against reference alignment"
   }
 }

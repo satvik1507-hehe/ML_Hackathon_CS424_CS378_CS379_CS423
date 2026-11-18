@@ -1,0 +1,9 @@
+{
+  "model": "hist_gradient_boosting",
+  "parameters": {
+    "base_sigma_m": 10.0,
+    "gap_tolerance_s": 4.0,
+    "disconnect_penalty": 4.0
+  },
+  "selection": "training-trip OOF macro F1; continuity tie-break"
+}

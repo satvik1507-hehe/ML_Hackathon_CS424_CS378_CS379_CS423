@@ -1,0 +1,50 @@
+{
+  "selected_model": "hist_gradient_boosting",
+  "decoder_parameters": {
+    "base_sigma_m": 10.0,
+    "gap_tolerance_s": 4.0,
+    "disconnect_penalty": 4.0
+  },
+  "selection_metric": "observation-weighted Top-1 across training-trip OOF predictions",
+  "training_oof_grid_best": {
+    "base_sigma_m": 10.0,
+    "gap_tolerance_s": 4.0,
+    "disconnect_penalty": 4.0,
+    "observations": 208417.0,
+    "top1_accuracy": 0.6267291055911945,
+    "trip_mean_macro_f1": 0.5420726754047123,
+    "trip_mean_route_continuity": 0.9746023239393219
+  },
+  "partitions": {
+    "train": {
+      "classifier_only": {
+        "observations": 208417.0,
+        "top1_accuracy": 0.6186539485742526,
+        "trip_mean_macro_f1": 0.4826013940810361,
+        "trip_mean_route_continuity": 0.8944556786355516
+      },
+      "top1_tuned_hmm_viterbi": {
+        "observations": 208417.0,
+        "top1_accuracy": 0.6267291055911945,
+        "trip_mean_macro_f1": 0.5420726754047123,
+        "trip_mean_route_continuity": 0.9746023239393219
+      }
+    },
+    "student_test": {
+      "classifier_only": {
+        "observations": 19160.0,
+        "top1_accuracy": 0.7027661795407099,
+        "trip_mean_macro_f1": 0.5136998277704747,
+        "trip_mean_route_continuity": 0.9116809922531905
+      },
+      "top1_tuned_hmm_viterbi": {
+        "observations": 19160.0,
+        "top1_accuracy": 0.7124217118997912,
+        "trip_mean_macro_f1": 0.5688619220799274,
+        "trip_mean_route_continuity": 0.9865620369062948
+      }
+    }
+  },
+  "evaluator_partition_used": false,
+  "note": "Separate experiment; original selected decoder/results are unchanged."
+}

@@ -43,11 +43,15 @@ compare it against a fixed-transition HMM and classifier-only predictions.
 
 ## Experiment snapshot
 
-The five candidate scorers are Logistic Regression, Random Forest, HistGradientBoosting, calibrated
-Linear SVM, and a small MLP. Five-fold GroupKFold uses trips as groups. HistGradientBoosting leads
-the selected CV Macro F1 point estimate (0.4826), with the MLP statistically tied. HMM/Viterbi
-decoding on the selected scorer raises student-test Macro F1 from 0.5137 to 0.5689 and route
-continuity from 0.9117 to 0.9866 on the supplied student-test trips.
+The active API model has since been promoted to the retrained teammate Random Forest + HMM pipeline.
+See [active_model.md](active_model.md) for its 28-feature inference path and student-test evidence.
+The earlier experiment figures below are preserved as historical results.
+
+
+The original Level 1 comparison used Logistic Regression, Random Forest, HistGradientBoosting,
+calibrated Linear SVM, and a small MLP. Those results remain preserved. The active API now runs the
+retrained teammate Random Forest + HMM pipeline; see [active_model.md](active_model.md) for its
+training and student-test comparison.
 
 ## Delivery constraints
 

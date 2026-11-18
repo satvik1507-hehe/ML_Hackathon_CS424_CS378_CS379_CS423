@@ -1,4 +1,4 @@
-.PHONY: install api ui inventory
+.PHONY: install api ui inventory eda
 
 install:
 	python -m pip install -e .
@@ -11,4 +11,7 @@ ui:
 
 inventory:
 	python -m pathsnap.data.inventory
+
+eda:
+	python scripts/run_eda.py
 

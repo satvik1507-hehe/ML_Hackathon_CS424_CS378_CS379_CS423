@@ -1,0 +1,29 @@
+{
+  "cross_validation": {
+    "trips": 80,
+    "observations": 208417,
+    "trip_mean_macro_f1": 0.48345251048447924,
+    "observation_weighted_top1_accuracy": 0.618423641065748,
+    "observation_weighted_candidate_miss_rate": 0.11101781524539744,
+    "topk8_baseline_top1_accuracy": 0.6186539485742526,
+    "topk8_baseline_macro_f1": 0.4826013940810361
+  },
+  "student_test": {
+    "trips": 10,
+    "observations": 19160,
+    "trip_mean_macro_f1": 0.5128265214702346,
+    "observation_weighted_top1_accuracy": 0.7022964509394573,
+    "observation_weighted_candidate_miss_rate": 0.00407098121085595,
+    "topk8_baseline_top1_accuracy": 0.7027661795407099,
+    "topk8_baseline_macro_f1": 0.5136998277704747
+  },
+  "configuration": {
+    "top_k": 16,
+    "search_radius_m": 60.0,
+    "label_radius_m": 100.0,
+    "folds": 5,
+    "seed": 99,
+    "fit_seconds_total": 17.41333966597449,
+    "evaluator_partition_used": false
+  }
+}

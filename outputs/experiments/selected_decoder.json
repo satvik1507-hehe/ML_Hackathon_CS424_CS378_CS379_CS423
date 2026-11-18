@@ -1,9 +1,15 @@
 {
-  "model": "hist_gradient_boosting",
+  "model": "random_forest",
   "parameters": {
-    "base_sigma_m": 10.0,
-    "gap_tolerance_s": 4.0,
-    "disconnect_penalty": 4.0
+    "w_emit": 1.0,
+    "w_dist": 0.09790453719825609,
+    "sigma": 24.560097272513193,
+    "beta": 7.890008358952053,
+    "w_trans": 1.313574782387415,
+    "break_pen": 19.368487342322954,
+    "uturn_pen": 8.004659395622454,
+    "gap_s": 33.84964301599993,
+    "eps": 0.0001
   },
-  "selection": "training-trip OOF macro F1; continuity tie-break"
+  "selection": "teammate repository tuned HMM parameters; retrained Random Forest; student_test development comparison"
 }

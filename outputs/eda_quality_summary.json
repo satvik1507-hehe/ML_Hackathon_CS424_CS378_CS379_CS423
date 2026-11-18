@@ -1,0 +1,174 @@
+{
+  "raw_file_audit": {
+    "train": {
+      "trips": 80,
+      "files_expected": 320,
+      "file_types": {
+        "track": {
+          "files": 80,
+          "rows": 208417,
+          "expected_cells": 625251,
+          "numeric_cells": 625251,
+          "blank_rows": 0,
+          "malformed_rows": 0,
+          "missing_cells": 0,
+          "extra_cells": 0,
+          "nonfinite_cells": 0
+        },
+        "nodes": {
+          "files": 80,
+          "rows": 1933485,
+          "expected_cells": 3866970,
+          "numeric_cells": 3866970,
+          "blank_rows": 0,
+          "malformed_rows": 0,
+          "missing_cells": 0,
+          "extra_cells": 0,
+          "nonfinite_cells": 0
+        },
+        "arcs": {
+          "files": 80,
+          "rows": 3876904,
+          "expected_cells": 7753808,
+          "numeric_cells": 7753808,
+          "blank_rows": 0,
+          "malformed_rows": 0,
+          "missing_cells": 0,
+          "extra_cells": 0,
+          "nonfinite_cells": 0
+        },
+        "route": {
+          "files": 80,
+          "rows": 31336,
+          "expected_cells": 31336,
+          "numeric_cells": 31336,
+          "blank_rows": 0,
+          "malformed_rows": 0,
+          "missing_cells": 0,
+          "extra_cells": 0,
+          "nonfinite_cells": 0
+        }
+      },
+      "gps_duplicate_coordinate_rows": 572,
+      "gps_intervals": 208337,
+      "gps_intervals_exactly_1s": 201048,
+      "gps_intervals_greater_than_1s": 7286,
+      "gps_intervals_nonpositive": 0,
+      "gps_gap_median_seconds": 1.0,
+      "gps_gap_p95_seconds": 1.0,
+      "gps_gap_max_seconds": 153064.0
+    },
+    "student_test": {
+      "trips": 10,
+      "files_expected": 40,
+      "file_types": {
+        "track": {
+          "files": 10,
+          "rows": 19160,
+          "expected_cells": 57480,
+          "numeric_cells": 57480,
+          "blank_rows": 0,
+          "malformed_rows": 0,
+          "missing_cells": 0,
+          "extra_cells": 0,
+          "nonfinite_cells": 0
+        },
+        "nodes": {
+          "files": 10,
+          "rows": 90689,
+          "expected_cells": 181378,
+          "numeric_cells": 181378,
+          "blank_rows": 0,
+          "malformed_rows": 0,
+          "missing_cells": 0,
+          "extra_cells": 0,
+          "nonfinite_cells": 0
+        },
+        "arcs": {
+          "files": 10,
+          "rows": 185041,
+          "expected_cells": 370082,
+          "numeric_cells": 370082,
+          "blank_rows": 0,
+          "malformed_rows": 0,
+          "missing_cells": 0,
+          "extra_cells": 0,
+          "nonfinite_cells": 0
+        },
+        "route": {
+          "files": 10,
+          "rows": 3477,
+          "expected_cells": 3477,
+          "numeric_cells": 3477,
+          "blank_rows": 0,
+          "malformed_rows": 0,
+          "missing_cells": 0,
+          "extra_cells": 0,
+          "nonfinite_cells": 0
+        }
+      },
+      "gps_duplicate_coordinate_rows": 6,
+      "gps_intervals": 19150,
+      "gps_intervals_exactly_1s": 18886,
+      "gps_intervals_greater_than_1s": 264,
+      "gps_intervals_nonpositive": 0,
+      "gps_gap_median_seconds": 1.0,
+      "gps_gap_p95_seconds": 1.0,
+      "gps_gap_max_seconds": 210.0
+    }
+  },
+  "inventory_diagnostics": {
+    "train": {
+      "trips": 80,
+      "trips_all_files_present": 80,
+      "trips_timestamps_nondecreasing": 80,
+      "trips_with_route_disconnections": 10,
+      "route_disconnected_steps": 13,
+      "invalid_arc_endpoints": 0,
+      "invalid_route_id_trips": 0,
+      "isolated_nodes": 0,
+      "weak_components_total": 3121,
+      "trips_max_gap_over_10s": 40,
+      "trips_max_gap_over_60s": 22,
+      "trips_max_gap_over_300s": 11
+    },
+    "student_test": {
+      "trips": 10,
+      "trips_all_files_present": 10,
+      "trips_timestamps_nondecreasing": 10,
+      "trips_with_route_disconnections": 1,
+      "route_disconnected_steps": 1,
+      "invalid_arc_endpoints": 0,
+      "invalid_route_id_trips": 0,
+      "isolated_nodes": 0,
+      "weak_components_total": 227,
+      "trips_max_gap_over_10s": 2,
+      "trips_max_gap_over_60s": 1,
+      "trips_max_gap_over_300s": 0
+    }
+  },
+  "candidate_exclusions": {
+    "train": {
+      "trip_cache_files": 80,
+      "observations": 208417,
+      "candidate_miss_observations": 25268,
+      "candidate_coverage_observations": 183149,
+      "candidate_miss_rate": 0.12123771093528839,
+      "candidate_rows": 1246147,
+      "candidate_rows_omitted_from_scorer_fit_if_used_as_training": 96702,
+      "candidate_rows_for_covered_observations": 1149445,
+      "fit_policy": "Missed-observation candidate rows are excluded from training; all observations remain in evaluation."
+    },
+    "student_test": {
+      "trip_cache_files": 10,
+      "observations": 19160,
+      "candidate_miss_observations": 302,
+      "candidate_coverage_observations": 18858,
+      "candidate_miss_rate": 0.015762004175365343,
+      "candidate_rows": 124122,
+      "candidate_rows_omitted_from_scorer_fit_if_used_as_training": 2199,
+      "candidate_rows_for_covered_observations": 121923,
+      "fit_policy": "Student-test is not used to fit the scorer; missed observations remain in evaluation."
+    }
+  }
+}

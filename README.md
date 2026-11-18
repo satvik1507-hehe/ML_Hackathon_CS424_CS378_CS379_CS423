@@ -24,6 +24,7 @@ cp .env.example .env
 # Edit PATHSNAP_DATA_ROOT in .env, then:
 python -m pip install -e .
 python -m pathsnap.data.inventory
+make eda
 python scripts/prepare_data.py
 python scripts/run_model_suite.py
 python scripts/analyze_comparison.py
@@ -37,6 +38,10 @@ python scripts/plot_experiments.py
 The inventory command writes a CSV summary under `outputs/`. It reads the training and student-test
 partitions only and reports file availability, row counts, timestamp gaps, coordinate bounds, and
 graph sizes. Verify the observed data before settling feature or distance assumptions.
+
+`make eda` reads only the 80 `train` and 10 `student_test` trips. It writes reproducible EDA tables,
+200 dpi plots, a data quality summary, and three small interactive maps under `outputs/eda/`.
+Set `PATHSNAP_DATA_ROOT` before running it; evaluator data is not read.
 
 Generate a real Folium map from a permitted trip (the GPS points, full network, and reference route
 are separate toggleable layers):
@@ -66,10 +71,9 @@ are retained as diagnostics.
 | Candidate scorer 5 | Small regularized MLP | Neural comparison on the same observation-arc features |
 | Route decoder | Gap-aware HMM with Viterbi decoding over road-arc candidates | Combines model emissions with directed graph connectivity and route plausibility |
 
-Current scorer by the pre-registered primary metric (trip-mean CV Macro F1): HistGradientBoosting.
-It narrowly leads the MLP and is not statistically separated from it by paired trip bootstrap, so
-describe this as the selection under the primary metric, not a decisive win. HMM/Viterbi is the
-larger measured improvement. Its transition penalty adapts to GPS gaps and directed road continuity.
+Historical Level 1 selection under the original seven-feature experiment: HistGradientBoosting.
+The active API model is now the retrained teammate Random Forest + HMM pipeline described below;
+the earlier results remain available for the Level 1 comparison.
 
 Potential observation-arc features include perpendicular distance, heading agreement, along-segment
 position, local road length, elapsed time, implied speed, turn angle, graph reachability, and
@@ -177,6 +181,14 @@ src/pathsnap/  Data, features, models, decoder, API and visualization package
 ui/            Evaluator-facing client, separated from server-side labels
 ```
 
+## Active inference model
+
+The active API uses a retrained 28-feature Random Forest followed by HMM/Viterbi decoding, adapted
+from the team's [RealAdhi/ML2026 repository](https://github.com/RealAdhi/ML2026). On the 10-trip
+student-test development partition, Random Forest Top-1 rose from 85.82% classifier-only to 94.16%
+with HMM decoding. See [docs/active_model.md](docs/active_model.md) for all five retrained models,
+fold results, decoder comparison, attribution, and the limits of this development score.
+
 ## Academic integrity and AI assistance
 
 The supporting assessment rules require independent team implementation and understanding. Treat
@@ -184,8 +196,6 @@ this scaffold and its modeling suggestions as a starting point: verify every des
 the data, disclose AI assistance as required, and write conclusions from your real experiments.
 Every team member should be able to explain the pipeline and reproduce the reported results.
 
-## Level 1 viva materials
+## Level 1 training evidence
 
-- [Level 1 viva review PDF](output/pdf/PathSnap_Level1_Viva_Review.pdf): method, five-model results, selection caveats, likely viva questions, and a demo walkthrough.
-- [Level 1 demo checklist](docs/level1_viva_demo.md): concise repository tour and reproduction commands.
 - Actual MLP fit history: `outputs/experiments/mlp_training_history.csv` and `outputs/experiments/plots/mlp_training_history.svg`. The validation series is accuracy because scikit-learn's early-stopping MLP does not expose validation loss.
