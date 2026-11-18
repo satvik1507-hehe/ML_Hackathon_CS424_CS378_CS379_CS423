@@ -1,0 +1,31 @@
+{
+  "partitions_read": {
+    "train": 80,
+    "student_test": 10
+  },
+  "evaluator_partition_read": false,
+  "raw_numeric_cells": {
+    "train": 12277365,
+    "student_test": 612417
+  },
+  "plots": [
+    "01_dataset_inventory.png",
+    "02_missing_invalid_values.png",
+    "03_sampling_intervals.png",
+    "04_representative_trajectories.png",
+    "05_geographic_extent_and_speed.png",
+    "06_road_network_and_overlays.png",
+    "07_reference_route_diagnostics.png",
+    "08_candidate_alignment_diagnostics.png",
+    "09_high_miss_trips.png",
+    "10_training_feature_distributions.png",
+    "11_training_feature_correlation.png",
+    "12_arc_length_distribution.png",
+    "13_network_connectivity.png"
+  ],
+  "interactive_maps": [
+    "outputs/eda/maps/train-00000034-normal.html",
+    "outputs/eda/maps/train-00000054-high_miss.html",
+    "outputs/eda/maps/student_test-00000056-student_test.html"
+  ]
+}
