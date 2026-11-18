@@ -42,5 +42,5 @@ Every PNG is rendered at 200 dpi and has a same-numbered CSV containing its plot
 ```
 
 The script saves only summary metrics and figures; it does not persist raw evaluator data, aligned
-labels, or observation-level predicted routes. The current outputs are local and have not been
-committed or pushed.
+labels, or observation-level predicted routes. The final outputs are committed in this repository.
+Separate viva guides and contributor upload ZIP files remain local and are excluded from submission.
