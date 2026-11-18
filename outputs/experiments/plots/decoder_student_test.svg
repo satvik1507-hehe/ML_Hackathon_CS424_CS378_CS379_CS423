@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="590" viewBox="0 0 1000 590">
+<rect width="100%" height="100%" fill="white"/>
+<text x="220" y="36" font-family="Arial" font-size="22" font-weight="bold">Student Test: classifier vs Viterbi</text>
+<text x="24" y="287.0" transform="rotate(-90 24 287.0)" font-family="Arial" font-size="15">Method</text>
+<line x1="220.0" y1="74" x2="220.0" y2="500" stroke="#d9dee5"/>
+<text x="220.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">0.00</text>
+<line x1="368.0" y1="74" x2="368.0" y2="500" stroke="#d9dee5"/>
+<text x="368.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">0.20</text>
+<line x1="516.0" y1="74" x2="516.0" y2="500" stroke="#d9dee5"/>
+<text x="516.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">0.40</text>
+<line x1="664.0" y1="74" x2="664.0" y2="500" stroke="#d9dee5"/>
+<text x="664.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">0.60</text>
+<line x1="812.0" y1="74" x2="812.0" y2="500" stroke="#d9dee5"/>
+<text x="812.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">0.80</text>
+<line x1="960.0" y1="74" x2="960.0" y2="500" stroke="#d9dee5"/>
+<text x="960.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">1.00</text>
+<text x="208" y="355.2" text-anchor="end" font-family="Arial" font-size="13">Selected HGB</text>
+<rect x="220" y="142.2" width="380.1" height="24.0" fill="#2878b5"><title>Classifier only Macro F1: 0.5137</title></rect>
+<text x="605.1" y="160.9" font-family="Arial" font-size="11">0.514</text>
+<rect x="220" y="171.4" width="421.0" height="24.0" fill="#24a148"><title>Classifier + Viterbi Macro F1: 0.5689</title></rect>
+<text x="646.0" y="190.2" font-family="Arial" font-size="11">0.569</text>
+<rect x="220" y="200.7" width="674.6" height="24.0" fill="#e67e22"><title>Classifier only continuity: 0.9117</title></rect>
+<text x="899.6" y="219.4" font-family="Arial" font-size="11">0.912</text>
+<rect x="220" y="230.0" width="730.1" height="24.0" fill="#8e44ad"><title>Classifier + Viterbi continuity: 0.9866</title></rect>
+<text x="955.1" y="248.7" font-family="Arial" font-size="11">0.987</text>
+<rect x="220" y="562" width="14" height="14" fill="#2878b5"/>
+<text x="240" y="574" font-family="Arial" font-size="12">Classifier only Macro F1</text>
+<rect x="405" y="562" width="14" height="14" fill="#24a148"/>
+<text x="425" y="574" font-family="Arial" font-size="12">Classifier + Viterbi Macro F1</text>
+<rect x="590" y="562" width="14" height="14" fill="#e67e22"/>
+<text x="610" y="574" font-family="Arial" font-size="12">Classifier only continuity</text>
+<rect x="775" y="562" width="14" height="14" fill="#8e44ad"/>
+<text x="795" y="574" font-family="Arial" font-size="12">Classifier + Viterbi continuity</text>
+</svg>

@@ -6,10 +6,11 @@ The raw data consists of timestamped GPS observations, trip-specific road nodes,
 and a chronological reference route. The target is route reconstruction, not a global road-ID
 classification problem. Arc IDs are meaningful only inside a trip's road graph.
 
-The intended inference unit is an observation-candidate-arc pair. Candidate scoring estimates how
-well an arc explains an observation; sequence decoding selects a temporally and topologically
-plausible arc sequence. The candidate generator and label-alignment procedure must be validated
-before any model metrics are trusted.
+The inference unit is an observation-candidate-arc pair. Candidate scoring estimates how well an
+arc explains an observation; sequence decoding selects a temporally and topologically plausible arc
+sequence. The reference route contains fewer arcs than GPS observations, so route-to-observation
+labels are produced by monotone geometric alignment and tracked with alignment-distance and
+candidate-miss diagnostics.
 
 ## Data boundaries
 
@@ -40,10 +41,19 @@ gaps rather than applying one fixed transition threshold. Candidate emission sco
 calibrated tabular model. This is an engineering hypothesis, not a claim of algorithmic novelty;
 compare it against a fixed-transition HMM and classifier-only predictions.
 
+## Experiment snapshot
+
+The five candidate scorers are Logistic Regression, Random Forest, HistGradientBoosting, calibrated
+Linear SVM, and a small MLP. Five-fold GroupKFold uses trips as groups. HistGradientBoosting leads
+the selected CV Macro F1 point estimate (0.4826), with the MLP statistically tied. HMM/Viterbi
+decoding on the selected scorer raises student-test Macro F1 from 0.5137 to 0.5689 and route
+continuity from 0.9117 to 0.9866 on the supplied student-test trips.
+
 ## Delivery constraints
 
 The two-laptop setup means the server owns the full inference path and labels; the UI calls the API
-with a trip ID and displays the returned prediction. Do not expose the ground-truth route in the
-request or response. For a public repository, keep raw data, secrets, and large local experiment
-artifacts out of Git unless the organizers explicitly require model artifacts to be submitted.
+with a trip ID and displays the returned prediction. Prediction loads a trip without its reference
+route, performs candidate scoring and Viterbi decoding, and only then loads the route for server-side
+metrics. Do not expose the ground-truth route in the request or response. Keep raw data and secrets
+out of Git; include final trained models and experiment records required by the submission guide.
 

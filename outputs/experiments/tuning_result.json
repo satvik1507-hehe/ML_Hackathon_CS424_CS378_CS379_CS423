@@ -1,0 +1,14 @@
+{
+  "model": "hist_gradient_boosting",
+  "best_value_cv_macro_f1": 0.48332281580050684,
+  "best_params": {
+    "max_iter": 220,
+    "learning_rate": 0.09263918803968696,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 15,
+    "l2_regularization": 0.0011841994968143118
+  },
+  "trials": 15,
+  "folds": 3,
+  "objective": "mean trip-level grouped-CV macro F1"
+}

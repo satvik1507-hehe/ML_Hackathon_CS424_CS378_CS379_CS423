@@ -1,0 +1,7 @@
+partition,metric,baseline,comparison,trips,mean_difference,ci95_low,ci95_high,bootstrap_resamples
+training_oof,macro_f1,classifier_only,classifier_plus_hmm_viterbi,80,0.05947128132367622,0.05031461163095284,0.06892612323947143,10000
+training_oof,top1_accuracy,classifier_only,classifier_plus_hmm_viterbi,80,0.005313398356333212,-0.0013947105133267825,0.012212459505664065,10000
+training_oof,route_continuity,classifier_only,classifier_plus_hmm_viterbi,80,0.08014664530377044,0.06825738440386515,0.09233161230762722,10000
+student_test,macro_f1,classifier_only,classifier_plus_hmm_viterbi,10,0.055162094309452625,0.02756809378186938,0.0813108549679681,10000
+student_test,top1_accuracy,classifier_only,classifier_plus_hmm_viterbi,10,0.005181419642517881,-0.005066058852228611,0.017042457580215466,10000
+student_test,route_continuity,classifier_only,classifier_plus_hmm_viterbi,10,0.07488104465310455,0.047934102124417934,0.10020412034844396,10000

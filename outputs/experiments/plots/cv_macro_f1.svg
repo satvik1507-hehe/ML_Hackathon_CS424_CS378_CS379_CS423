@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="590" viewBox="0 0 1000 590">
+<rect width="100%" height="100%" fill="white"/>
+<text x="220" y="36" font-family="Arial" font-size="22" font-weight="bold">Trip-group CV Macro F1</text>
+<text x="24" y="287.0" transform="rotate(-90 24 287.0)" font-family="Arial" font-size="15">Models</text>
+<line x1="220.0" y1="74" x2="220.0" y2="500" stroke="#d9dee5"/>
+<text x="220.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">0.00</text>
+<line x1="368.0" y1="74" x2="368.0" y2="500" stroke="#d9dee5"/>
+<text x="368.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">0.20</text>
+<line x1="516.0" y1="74" x2="516.0" y2="500" stroke="#d9dee5"/>
+<text x="516.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">0.40</text>
+<line x1="664.0" y1="74" x2="664.0" y2="500" stroke="#d9dee5"/>
+<text x="664.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">0.60</text>
+<line x1="812.0" y1="74" x2="812.0" y2="500" stroke="#d9dee5"/>
+<text x="812.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">0.80</text>
+<line x1="960.0" y1="74" x2="960.0" y2="500" stroke="#d9dee5"/>
+<text x="960.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">1.00</text>
+<text x="208" y="130.2" text-anchor="end" font-family="Arial" font-size="13">hist_gradient_boosting</text>
+<rect x="220" y="87.6" width="357.1" height="24.0" fill="#315b7d"><title>CV Macro F1: 0.4826</title></rect>
+<text x="582.1" y="106.4" font-family="Arial" font-size="11">0.483</text>
+<text x="208" y="215.4" text-anchor="end" font-family="Arial" font-size="13">small_mlp</text>
+<rect x="220" y="172.8" width="357.0" height="24.0" fill="#315b7d"><title>CV Macro F1: 0.4824</title></rect>
+<text x="582.0" y="191.6" font-family="Arial" font-size="11">0.482</text>
+<text x="208" y="300.6" text-anchor="end" font-family="Arial" font-size="13">random_forest</text>
+<rect x="220" y="258.0" width="350.5" height="24.0" fill="#315b7d"><title>CV Macro F1: 0.4737</title></rect>
+<text x="575.5" y="276.8" font-family="Arial" font-size="11">0.474</text>
+<text x="208" y="385.8" text-anchor="end" font-family="Arial" font-size="13">logistic_regression</text>
+<rect x="220" y="343.2" width="341.9" height="24.0" fill="#315b7d"><title>CV Macro F1: 0.4621</title></rect>
+<text x="566.9" y="362.0" font-family="Arial" font-size="11">0.462</text>
+<text x="208" y="471.0" text-anchor="end" font-family="Arial" font-size="13">calibrated_linear_svm</text>
+<rect x="220" y="428.4" width="341.4" height="24.0" fill="#315b7d"><title>CV Macro F1: 0.4614</title></rect>
+<text x="566.4" y="447.2" font-family="Arial" font-size="11">0.461</text>
+<rect x="220" y="562" width="14" height="14" fill="#315b7d"/>
+<text x="240" y="574" font-family="Arial" font-size="12">CV Macro F1</text>
+</svg>

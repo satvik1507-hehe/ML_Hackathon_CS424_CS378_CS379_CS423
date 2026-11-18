@@ -8,12 +8,12 @@ import folium
 from pathsnap.data.reader import load_trip
 
 
-def make_trip_map(trip, output: str | Path) -> Path:
-    """Render GPS observations, network arcs, and reference route when available."""
+def make_trip_map(trip, output: str | Path, predicted_arc_ids=None) -> Path:
+    """Render GPS observations, network, reference route, and optional predicted route."""
     output_path = Path(output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     center = [float(trip.gps[:, 1].mean()), float(trip.gps[:, 0].mean())]
-    fmap = folium.Map(location=center, zoom_start=14, control_scale=True, tiles="CartoDB positron")
+    fmap = folium.Map(location=center, zoom_start=14, control_scale=True, tiles="OpenStreetMap")
 
     gps_layer = folium.FeatureGroup(name="GPS observations", show=True)
     for lon, lat, seconds in trip.gps:
@@ -51,6 +51,20 @@ def make_trip_map(trip, output: str | Path) -> Path:
             ordered_route_layer
         )
     ordered_route_layer.add_to(fmap)
+
+    if predicted_arc_ids is not None:
+        predicted_layer = folium.FeatureGroup(name="Predicted route", show=True)
+        predicted_coords = []
+        for arc_id in predicted_arc_ids:
+            start_id, end_id = trip.arcs[int(arc_id)]
+            start, end = trip.nodes[int(start_id)], trip.nodes[int(end_id)]
+            if not predicted_coords:
+                predicted_coords.append([float(start[1]), float(start[0])])
+            predicted_coords.append([float(end[1]), float(end[0])])
+        if predicted_coords:
+            folium.PolyLine(predicted_coords, color="#e67e22", weight=5,
+                            tooltip="Predicted route").add_to(predicted_layer)
+        predicted_layer.add_to(fmap)
     folium.LayerControl(collapsed=False).add_to(fmap)
     fmap.save(str(output_path))
     return output_path

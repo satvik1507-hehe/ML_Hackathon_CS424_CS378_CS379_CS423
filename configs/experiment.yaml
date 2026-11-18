@@ -13,11 +13,12 @@ models:
   compare:
     - logistic_regression
     - random_forest
-    - extra_trees
     - hist_gradient_boosting
-    - calibrated_rbf_svm
+    - calibrated_linear_svm
+    - small_mlp
   bayesian_search_model: hist_gradient_boosting
-  bayesian_trials: 40
+  bayesian_trials: 15
+  bayesian_folds: 3
 decoder:
   method: gap_aware_hmm_viterbi
   compare_classifier_only: true

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="590" viewBox="0 0 1000 590">
+<rect width="100%" height="100%" fill="white"/>
+<text x="220" y="36" font-family="Arial" font-size="22" font-weight="bold">Observation-level Log Loss</text>
+<text x="24" y="287.0" transform="rotate(-90 24 287.0)" font-family="Arial" font-size="15">Models</text>
+<line x1="220.0" y1="74" x2="220.0" y2="500" stroke="#d9dee5"/>
+<text x="220.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">0.00</text>
+<line x1="368.0" y1="74" x2="368.0" y2="500" stroke="#d9dee5"/>
+<text x="368.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">0.97</text>
+<line x1="516.0" y1="74" x2="516.0" y2="500" stroke="#d9dee5"/>
+<text x="516.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">1.94</text>
+<line x1="664.0" y1="74" x2="664.0" y2="500" stroke="#d9dee5"/>
+<text x="664.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">2.92</text>
+<line x1="812.0" y1="74" x2="812.0" y2="500" stroke="#d9dee5"/>
+<text x="812.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">3.89</text>
+<line x1="960.0" y1="74" x2="960.0" y2="500" stroke="#d9dee5"/>
+<text x="960.0" y="524" text-anchor="middle" font-family="Arial" font-size="12">4.86</text>
+<text x="208" y="130.2" text-anchor="end" font-family="Arial" font-size="13">hist_gradient_boosting</text>
+<rect x="220" y="87.6" width="625.3" height="24.0" fill="#315b7d"><title>CV Log Loss: 4.1059</title></rect>
+<text x="850.3" y="106.4" font-family="Arial" font-size="11">4.106</text>
+<rect x="220" y="116.9" width="197.4" height="24.0" fill="#e67e22"><title>Student-test Log Loss: 1.2960</title></rect>
+<text x="422.4" y="135.6" font-family="Arial" font-size="11">1.296</text>
+<text x="208" y="215.4" text-anchor="end" font-family="Arial" font-size="13">small_mlp</text>
+<rect x="220" y="172.8" width="614.0" height="24.0" fill="#315b7d"><title>CV Log Loss: 4.0314</title></rect>
+<text x="839.0" y="191.6" font-family="Arial" font-size="11">4.031</text>
+<rect x="220" y="202.1" width="181.6" height="24.0" fill="#e67e22"><title>Student-test Log Loss: 1.1925</title></rect>
+<text x="406.6" y="220.8" font-family="Arial" font-size="11">1.192</text>
+<text x="208" y="300.6" text-anchor="end" font-family="Arial" font-size="13">random_forest</text>
+<rect x="220" y="258.0" width="629.0" height="24.0" fill="#315b7d"><title>CV Log Loss: 4.1300</title></rect>
+<text x="854.0" y="276.8" font-family="Arial" font-size="11">4.130</text>
+<rect x="220" y="287.3" width="192.1" height="24.0" fill="#e67e22"><title>Student-test Log Loss: 1.2615</title></rect>
+<text x="417.1" y="306.0" font-family="Arial" font-size="11">1.261</text>
+<text x="208" y="385.8" text-anchor="end" font-family="Arial" font-size="13">logistic_regression</text>
+<rect x="220" y="343.2" width="643.5" height="24.0" fill="#315b7d"><title>CV Log Loss: 4.2250</title></rect>
+<text x="868.5" y="362.0" font-family="Arial" font-size="11">4.225</text>
+<rect x="220" y="372.5" width="223.1" height="24.0" fill="#e67e22"><title>Student-test Log Loss: 1.4649</title></rect>
+<text x="448.1" y="391.2" font-family="Arial" font-size="11">1.465</text>
+<text x="208" y="471.0" text-anchor="end" font-family="Arial" font-size="13">calibrated_linear_svm</text>
+<rect x="220" y="428.4" width="626.9" height="24.0" fill="#315b7d"><title>CV Log Loss: 4.1162</title></rect>
+<text x="851.9" y="447.2" font-family="Arial" font-size="11">4.116</text>
+<rect x="220" y="457.7" width="201.4" height="24.0" fill="#e67e22"><title>Student-test Log Loss: 1.3223</title></rect>
+<text x="426.4" y="476.4" font-family="Arial" font-size="11">1.322</text>
+<rect x="220" y="562" width="14" height="14" fill="#315b7d"/>
+<text x="240" y="574" font-family="Arial" font-size="12">CV Log Loss</text>
+<rect x="405" y="562" width="14" height="14" fill="#e67e22"/>
+<text x="425" y="574" font-family="Arial" font-size="12">Student-test Log Loss</text>
+</svg>

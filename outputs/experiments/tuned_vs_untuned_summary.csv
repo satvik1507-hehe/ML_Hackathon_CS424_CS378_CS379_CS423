@@ -1,0 +1,3 @@
+model,version,student_test_macro_f1_trip_mean,student_test_top1_accuracy,student_test_log_loss,student_test_route_continuity_trip_mean,student_test_candidate_miss_rate,observations,optimization_seconds,final_fit_seconds,inference_ms_per_observation
+hist_gradient_boosting,untuned,0.5136998277704747,0.7027661795407099,1.2959882690323388,0.9116809922531905,0.015762004175365343,19160,0.0,N/A,0.006848549429475017
+hist_gradient_boosting,tuned,0.5153930499016696,0.7044363256784969,1.2914716857465338,0.914576932738013,0.015762004175365343,19160,212.73133591600345,5.329650958999991,0.00997835130360034
