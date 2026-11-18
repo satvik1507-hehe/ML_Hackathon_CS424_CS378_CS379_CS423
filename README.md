@@ -1,4 +1,6 @@
-# PathSnap
+# ML_Hackathon_CS424_CS378_CS379_CS423
+
+## PathSnap
 
 PathSnap reconstructs realistic vehicle routes by matching noisy GPS observations to a trip's
 road network. This repository is the project scaffold: raw data stays external, and every result
@@ -135,4 +137,3 @@ The supporting assessment rules require independent team implementation and unde
 this scaffold and its modeling suggestions as a starting point: verify every design choice against
 the data, disclose AI assistance as required, and write conclusions from your real experiments.
 Every team member should be able to explain the pipeline and reproduce the reported results.
-
