@@ -20,6 +20,7 @@ class PredictionResponse(BaseModel):
     trip_id: str
     gps_points: list[list[float]]
     predicted_route: list[list[float]]
+    predicted_route_segments: list[list[list[float]]]
     metrics: dict[str, float] | None = None
 
 
@@ -85,15 +86,22 @@ def predict(trip_id: str) -> PredictionResponse:
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
 
-    route_coords: list[list[float]] = []
+    route_segments: list[list[list[float]]] = []
+    current_segment: list[list[float]] = []
     for position, arc_id in enumerate(predicted):
         start_id, end_id = trip.arcs[int(arc_id)]
         start, end = trip.nodes[int(start_id)], trip.nodes[int(end_id)]
         if position == 0 or int(trip.arcs[int(predicted[position - 1]), 1]) != int(start_id):
-            route_coords.append([float(start[0]), float(start[1])])
-        route_coords.append([float(end[0]), float(end[1])])
+            if current_segment:
+                route_segments.append(current_segment)
+            current_segment = [[float(start[0]), float(start[1])]]
+        current_segment.append([float(end[0]), float(end[1])])
+    if current_segment:
+        route_segments.append(current_segment)
+    route_coords = [point for segment in route_segments for point in segment]
     gps_points = [[float(lon), float(lat)] for lon, lat in trip.gps[:, :2]]
     safe_metrics = {key: float(value) for key, value in metrics.items()}
     return PredictionResponse(trip_id=trip_id, gps_points=gps_points,
-                              predicted_route=route_coords, metrics=safe_metrics)
+                              predicted_route=route_coords, predicted_route_segments=route_segments,
+                              metrics=safe_metrics)
 
